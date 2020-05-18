@@ -1,5 +1,5 @@
 {
-  "name": "tigr1991/react-pixi",
+  "name": "@tigr1991/react-pixi",
   "version": "2.0.1",
   "description": "Write PixiJS applications using React declarative style.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   "jsnext:main": "module.js",
   "author": "Patrick Brouwer",
   "license": "MIT",
-  "repository": "git+https://github.com/inlet/react-pixi.git",
+  "repository": "git+https://github.com/tigr1991/react-pixi.git",
   "scripts": {
     "docz:dev": "rimraf ./docs && docz dev",
     "docz:build": "rimraf ./docs && yarn build:prod && docz build",
