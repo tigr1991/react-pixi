@@ -123,7 +123,7 @@ class Stage extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, prevContext) {
-    const { width, height, raf } = this.props
+    const { width, height, raf, resolution } = this.props
 
     // handle resize
     if (prevProps.height !== height || prevProps.width !== width) {
@@ -136,6 +136,9 @@ class Stage extends React.Component {
     }
 
     // handle resolution ?
+    if (prevProps.resolution !== resolution) {
+      this.app.renderer.resolution = resolution
+    }
 
     // flush fiber
     PixiFiber.updateContainer(this.getChildren(), this.mountNode, this)
