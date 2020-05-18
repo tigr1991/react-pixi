@@ -39,7 +39,6 @@ const propTypes = {
 
   // run ticker at start?
   raf: PropTypes.bool,
-  resolution: PropTypes.number,
 
   // render component on component lifecycle changes?
   renderOnComponentChange: PropTypes.bool,
@@ -125,7 +124,7 @@ class Stage extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, prevContext) {
-    const { width, height, raf, resolution } = this.props
+    const { width, height, raf, options } = this.props
 
     // handle resize
     if (prevProps.height !== height || prevProps.width !== width) {
@@ -138,10 +137,11 @@ class Stage extends React.Component {
     }
 
     // handle resolution ?
-    console.log('componentDidUpdate: resolution:' + prevProps.resolution)
-    if (prevProps.resolution !== resolution) {
-      console.log('componentDidUpdate: new resolution:' + resolution)
-      this.app.renderer.resolution = resolution
+    console.log('componentDidUpdate: resolution:' + prevProps.options.resolution)
+    console.log(this.app.renderer)
+    if (prevProps.options.resolution !== options.resolution) {
+      console.log('componentDidUpdate: new resolution:' + options.resolution)
+      this.app.renderer.resolution = options.resolution
     }
 
     // flush fiber
