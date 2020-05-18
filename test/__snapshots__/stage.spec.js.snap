@@ -9,6 +9,7 @@ Object {
   "options": [Function],
   "raf": [Function],
   "renderOnComponentChange": [Function],
+  "resolution": [Function],
   "width": [Function],
 }
 `;
@@ -20,6 +21,7 @@ Object {
   "onUnmount": [Function],
   "raf": true,
   "renderOnComponentChange": true,
+  "resolution": 1,
   "width": 800,
 }
 `;
