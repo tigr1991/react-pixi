@@ -18978,14 +18978,14 @@ var reactReconciler = createCommonjsModule(function (module) {
 }
 });
 
-var name = "@inlet/react-pixi";
+var name = "@tigr1991/react-pixi";
 var version = "2.0.1";
 var description = "Write PixiJS applications using React declarative style.";
 var main = "index.js";
 var module$1 = "module.js";
 var author = "Patrick Brouwer";
 var license = "MIT";
-var repository = "git+https://github.com/inlet/react-pixi.git";
+var repository = "git+https://github.com/tigr1991/react-pixi.git";
 var scripts = {
 	"docz:dev": "rimraf ./docs && docz dev",
 	"docz:build": "rimraf ./docs && yarn build:prod && docz build",
@@ -20473,7 +20473,6 @@ var propTypes$1 = {
   onUnmount: propTypes.func,
   // run ticker at start?
   raf: propTypes.bool,
-  resolution: propTypes.number,
   // render component on component lifecycle changes?
   renderOnComponentChange: propTypes.bool,
   children: propTypes.node,
@@ -20577,7 +20576,7 @@ var Stage = /*#__PURE__*/function (_React$Component) {
           width = _this$props2.width,
           height = _this$props2.height,
           raf = _this$props2.raf,
-          resolution = _this$props2.resolution; // handle resize
+          options = _this$props2.options; // handle resize
 
       if (prevProps.height !== height || prevProps.width !== width) {
         this.app.renderer.resize(width, height);
@@ -20589,11 +20588,15 @@ var Stage = /*#__PURE__*/function (_React$Component) {
       } // handle resolution ?
 
 
-      console.log('componentDidUpdate: resolution:' + prevProps.resolution);
+      console.log('v1_componentDidUpdate: resolution:' + prevProps.options.resolution);
+      console.log('A');
+      console.log(this.app.renderer);
+      console.log('B');
+      console.log(this.app.prevProps.options);
 
-      if (prevProps.resolution !== resolution) {
-        console.log('componentDidUpdate: new resolution:' + resolution);
-        this.app.renderer.resolution = resolution;
+      if (prevProps.options.resolution !== options.resolution) {
+        console.log('v1_componentDidUpdate: new resolution:' + options.resolution);
+        this.app.renderer.resolution = options.resolution;
       } // flush fiber
 
 
