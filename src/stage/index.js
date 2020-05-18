@@ -136,13 +136,8 @@ class Stage extends React.Component {
       this.app.ticker[raf ? 'start' : 'stop']()
     }
 
-    // handle resolution ?
-    console.log('v2_componentDidUpdate: resolution:' + prevProps.options.resolution)
-    console.log('A')
-    console.log(this.app.renderer)
-    console.log('B')
+    // handle resolution
     if (prevProps.options.resolution !== options.resolution) {
-      console.log('v2_componentDidUpdate: new resolution:' + options.resolution)
       this.app.renderer.resolution = options.resolution
     }
 
