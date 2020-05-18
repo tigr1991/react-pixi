@@ -138,7 +138,9 @@ class Stage extends React.Component {
     }
 
     // handle resolution ?
+    console.log('componentDidUpdate: resolution:' + prevProps.resolution)
     if (prevProps.resolution !== resolution) {
+      console.log('componentDidUpdate: new resolution:' + resolution)
       this.app.renderer.resolution = resolution
     }
 
