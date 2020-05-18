@@ -1,5 +1,5 @@
 {
-  "name": "@inlet/react-pixi",
+  "name": "tigr1991/react-pixi",
   "version": "2.0.1",
   "description": "Write PixiJS applications using React declarative style.",
   "main": "index.js",
